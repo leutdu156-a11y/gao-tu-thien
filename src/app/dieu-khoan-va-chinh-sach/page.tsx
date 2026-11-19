@@ -7,7 +7,7 @@ import { CTABox, PageHeader, Section } from '@/components/content';
 const CANONICAL = `${SITE_URL}/dieu-khoan-va-chinh-sach/`;
 
 export const metadata: Metadata = {
-  title: 'Điều Khoản & Chính Sách Giao Nhận, Đổi Trả | Vựa Gạo Sóc Trăng',
+  title: 'Điều Khoản & Chính Sách Giao Nhận, Đổi Trả',
   description:
     'Chính sách giao hàng, kiểm tra cân ký, đổi trả gạo 100%, xuất hóa đơn VAT 5% và bảo mật thông tin đoàn thiện nguyện tại Vựa Gạo Sóc Trăng.',
   alternates: { canonical: CANONICAL },

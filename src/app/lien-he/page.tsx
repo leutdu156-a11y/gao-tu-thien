@@ -8,7 +8,7 @@ import { FastQuoteForm } from '@/components/FastQuoteForm';
 const CANONICAL = `${SITE_URL}/lien-he/`;
 
 export const metadata: Metadata = {
-  title: 'Liên Hệ Vựa Gạo Sóc Trăng – Hotline & Địa Chỉ Kho Gạo Từ Thiện',
+  title: 'Liên Hệ Hotline & Địa Chỉ Kho Gạo Từ Thiện',
   description:
     'Thông tin liên hệ Vựa Gạo Sóc Trăng: Hotline/Zalo 0762 234 135, địa chỉ 4 kho tại TP.HCM, Bình Dương, Tây Ninh và nhà máy Đồng Tháp.',
   alternates: { canonical: CANONICAL },
