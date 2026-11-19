@@ -25,3 +25,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Tuyệt đối không bịa `review` / `aggregateRating` ảo trong JSON-LD `Product` và không gán review Google Maps (`LocalBusiness`) vào schema `Product` để tránh bị Google phạt spam dữ liệu có cấu trúc.
 - Đánh giá Google Maps chỉ hiển thị dưới dạng giao diện uy tín cho người đọc (`src/components/GoogleReviews.tsx`).
 - Ảnh chia sẻ link (`og:image` / `twitter:image`) dùng `/og-gao-tu-thien.jpg` (1200x630); ảnh sơ đồ kho `he-thong-kho-vua-gao-soc-trang.jpg` chỉ dùng hiển thị trong trang.
+
+### 5. Tự động Technical SEO Audit sau mọi lần sửa/thêm trang
+- Mọi lần thêm trang mới, chỉnh sửa nội dung, metadata, link nội bộ hoặc `.htaccess`, bắt buộc build và chạy `npm run audit:seo` (đã tích hợp tự động trong `scripts/deploy.sh`).
+- Nếu `scripts/seo-audit.mjs` báo bất kỳ `[ERROR]` nào (lệch route/sitemap, lặp thương hiệu trong `<title>`, sai `canonical`, link nội bộ gãy/qua redirect, ảnh thiếu `alt` hoặc mất file, lỗi JSON-LD, lỗi escape `\"` trong `.htaccess` LiteSpeed), **phải tự sửa triệt để cho đến khi pass 100%** trước khi deploy và báo hoàn thành.

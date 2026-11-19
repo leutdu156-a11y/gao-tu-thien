@@ -11,11 +11,14 @@ REMOTE_ORIGIN="https://github.com/leutdu156-a11y/gao-tu-thien.git"
 DEPLOY_TMP="$(mktemp -d)"
 trap 'rm -rf "$DEPLOY_TMP"' EXIT
 
-echo "🚀 [1/4] Build Next.js Static Export..."
+echo "🚀 [1/5] Build Next.js Static Export..."
 cd "$PROJECT_DIR"
 npm run build
 
-echo "📦 [2/4] Đồng bộ bản tĩnh nối tiếp vào nhánh deploy (không force-push)..."
+echo "🔎 [2/5] Chạy Technical SEO Audit tự động trên out/..."
+npm run audit:seo
+
+echo "📦 [3/5] Đồng bộ bản tĩnh nối tiếp vào nhánh deploy (không force-push)..."
 if git clone --depth 1 --branch deploy --single-branch "$REMOTE_HOSTINGER" "$DEPLOY_TMP" -q 2>/dev/null; then
   :
 else
@@ -30,14 +33,14 @@ cd "$DEPLOY_TMP"
 git add -A
 if [ -n "$(git status --porcelain)" ]; then
   git commit -m "deploy: update static build $TIMESTAMP" -q
-  echo "🌐 [3/4] Đẩy commit nối tiếp (fast-forward) lên GitHub hongnguyenrice & leutdu156-a11y..."
+  echo "🌐 [4/5] Đẩy commit nối tiếp (fast-forward) lên GitHub hongnguyenrice & leutdu156-a11y..."
   git push "$REMOTE_HOSTINGER" deploy:deploy -q
   git push "$REMOTE_ORIGIN" deploy:deploy -q
 else
-  echo "🌐 [3/4] Bản build tĩnh không có thay đổi so với nhánh deploy hiện tại (bỏ qua push)."
+  echo "🌐 [4/5] Bản build tĩnh không có thay đổi so với nhánh deploy hiện tại (bỏ qua push)."
 fi
 
-echo "🗜️ [4/4] Đóng gói zip lưu trữ chuẩn YYYYMMDD-HHMM..."
+echo "🗜️ [5/5] Đóng gói zip lưu trữ chuẩn YYYYMMDD-HHMM..."
 ZIP_NAME="hostinger-gaotuthien-${TIMESTAMP}.zip"
 DOWNLOADS_DIR="/Users/leutdu/Downloads"
 cd "$PROJECT_DIR/out"

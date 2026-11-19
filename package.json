@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "audit:seo": "node scripts/seo-audit.mjs",
     "deploy": "bash scripts/deploy.sh",
     "start": "next start",
     "lint": "eslint"
