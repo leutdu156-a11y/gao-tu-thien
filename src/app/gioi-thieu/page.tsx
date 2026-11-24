@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { BRAND_INFO } from '@/data/mockData';
 import { PHONE_DISPLAY, SITE_URL } from '@/data/site';
-import { CTABox, DeliveryAreas, PageHeader, Section } from '@/components/content';
+import { CTABox, DeliveryAreas, PageHeader, RealPhotos, Section } from '@/components/content';
 
 const CANONICAL = `${SITE_URL}/gioi-thieu/`;
 
@@ -56,6 +56,8 @@ export default function GioiThieuPage() {
           </p>
         </div>
       </Section>
+
+      <RealPhotos />
 
       <Section title="Hệ Thống Kho & Nhà Máy" muted>
         <DeliveryAreas />

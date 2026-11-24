@@ -32,13 +32,14 @@ export const QUOTE_PATH = '/bao-gia-gao-tu-thien/';
 export const QUOTE_FORM_URL = `${QUOTE_PATH}#form-bao-gia`;
 
 /**
- * Thông tin giao hàng. TODO (cần dữ liệu thật): thời gian giao chuẩn và phí giao.
- * Khi có số liệu chính thức, chỉ cần sửa 2 dòng leadTime / fee bên dưới.
+ * Thông tin giao hàng và chính sách miễn phí vận chuyển theo ngưỡng sản lượng.
  */
 export const DELIVERY = {
-  leadTime: 'Xác nhận cụ thể khi báo giá, tùy số lượng, quy cách đóng bao và địa điểm giao.',
-  fee: 'Báo cụ thể theo địa điểm và số lượng ngay trong báo giá.',
-  urgent: 'Chương trình cần gạo gấp: gọi trực tiếp hotline để kho kiểm tra xe và hàng sẵn có.',
+  leadTime:
+    'Giao trong ngày tại TP.HCM & Bình Dương (hỗ trợ gấp 2–4 giờ từ kho Lái Thiêu, Thủ Đức, Quận 7). Đơn từ 500kg – 2 tấn nên đặt trước 1–2 ngày để kho đóng bao mới chuẩn quy cách.',
+  fee: 'Miễn phí 100% xe tải giao tận nơi và phụ xe bốc xếp vào tận kho/sảnh Chùa tại TP.HCM & Bình Dương cho đơn từ 300kg trở lên (đơn dưới 300kg hoặc đi tỉnh hỗ trợ trợ giá cước tốt nhất theo tuyến xe nhà máy).',
+  urgent:
+    'Đoàn thiện nguyện hoặc chuyến cứu trợ cần gạo gấp: gọi trực tiếp 0762 234 135 để kho kiểm tra hàng sẵn và điều xe ngay.',
 };
 
 /** Khu vực giao — suy ra từ các chi nhánh và nhà máy đang có. */
@@ -85,10 +86,40 @@ export const ORDER_STEPS = [
 ];
 
 /**
- * Ảnh thực tế (kho, đóng bao, giao hàng). TODO: chép ảnh vào /public/images/thuc-te/ rồi khai báo ở đây.
- * Khu vực ảnh chỉ hiển thị khi mảng này có dữ liệu — không dùng ảnh minh họa stock.
+ * Ảnh thực tế (kho, đóng bao, giao hàng) từ /public/hoat-dong/.
  */
-export const REAL_PHOTOS: { src: string; alt: string; caption: string }[] = [];
+export const REAL_PHOTOS: { src: string; alt: string; caption: string }[] = [
+  {
+    src: '/hoat-dong/kho-gao-xuat-hang.jpg',
+    alt: 'Kho bãi Vựa Gạo Sóc Trăng xuất hàng gạo từ thiện số lượng lớn',
+    caption: 'Kho dự trữ và xuất hàng quy mô lớn tại Vựa Gạo Sóc Trăng, sẵn sàng điều xe tải giao nhanh.',
+  },
+  {
+    src: '/hoat-dong/dong-goi-tui-5kg-pallet.jpg',
+    alt: 'Đóng gói túi gạo từ thiện 5kg xếp pallet gọn gàng sạch sẽ',
+    caption: 'Túi gạo 5kg được may miệng công nghiệp chắc chắn, xếp pallet khô ráo trước giờ xuất kho.',
+  },
+  {
+    src: '/hoat-dong/chong-bao-huong-lai-10kg.jpg',
+    alt: 'Chồng bao gạo Hương Lài 10kg chuẩn bị giao đoàn thiện nguyện',
+    caption: 'Gạo đóng bao 10kg sạch đẹp, cam kết đúng trọng lượng và chất lượng đồng đều từng bao.',
+  },
+  {
+    src: '/hoat-dong/chuan-bi-bao-gao-5kg.jpg',
+    alt: 'Chuẩn bị các bao gạo từ thiện 5kg tại điểm tập kết phát quà',
+    caption: 'Các phần gạo 5kg được sắp xếp ngay ngắn tại điểm tập kết trước khi bà con đến nhận quà.',
+  },
+  {
+    src: '/hoat-dong/chuyen-xe-trao-tang.jpg',
+    alt: 'Chuyến xe giao gạo từ thiện trao tận tay các cô chú lớn tuổi',
+    caption: 'Đội xe giao gạo tận nơi đến chùa, mái ấm và trao tận tay bà con có hoàn cảnh khó khăn.',
+  },
+  {
+    src: '/hoat-dong/tet-se-chia-cai-be.jpg',
+    alt: 'Chương trình Tết Sẻ Chia trao tặng gạo nghĩa tình cho hộ nghèo',
+    caption: 'Đồng hành cùng Quý mạnh thường quân trong các chuyến trao quà Tết Sẻ Chia tại miền Tây.',
+  },
+];
 
 export const getProduct = (id: string) => RICE_PRODUCTS.find((p) => p.id === id);
 export const getProducts = (ids: string[]) =>
@@ -133,7 +164,7 @@ export const HOME_FAQS = [
   },
   {
     q: 'Chi phí vận chuyển và hỗ trợ bốc xếp đến Chùa, Mái ấm như thế nào?',
-    a: 'Với hệ thống 4 chi nhánh tại TP.HCM, Bình Dương, Tây Ninh và nhà máy xay xát Đồng Tháp, chúng tôi có đội xe tải chuyên dụng giao hàng tận nơi. Hỗ trợ miễn phí hoặc trợ giá tối đa cước xe, đồng thời tài xế và nhân viên phụ trách khuân vác, sắp xếp gạo gọn gàng vào tận kho hoặc sảnh chùa/bếp ăn.',
+    a: 'Miễn phí 100% xe tải giao tận nơi và phụ xe bốc xếp vào tận kho/sảnh Chùa tại TP.HCM & Bình Dương cho đơn từ 300kg trở lên. Với đơn dưới 300kg hoặc đi tỉnh, hệ thống 4 chi nhánh tại TP.HCM, Bình Dương, Tây Ninh và nhà máy Đồng Tháp luôn hỗ trợ ghép chuyến trợ giá cước tốt nhất cho Quý đoàn.',
   },
   {
     q: 'Nên chọn loại gạo nào để vừa ngon vừa tiết kiệm ngân sách nhất?',

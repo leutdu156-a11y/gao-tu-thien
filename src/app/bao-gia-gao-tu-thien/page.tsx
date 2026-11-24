@@ -16,6 +16,7 @@ import {
   OrderSteps,
   PageHeader,
   PriceTable,
+  RealPhotos,
   Section,
 } from '@/components/content';
 import { FastQuoteForm } from '@/components/FastQuoteForm';
@@ -193,6 +194,9 @@ export default function BaoGiaPage() {
 
       {/* Đánh giá thực tế từ Google Maps */}
       <GoogleReviews />
+
+      {/* Hình ảnh thực tế tại kho & giao hàng */}
+      <RealPhotos />
 
       {/* Quy trình đặt hàng */}
       <Section title="Quy Trình Nhận Báo Giá & Đặt Hàng Gạo Từ Thiện" muted>

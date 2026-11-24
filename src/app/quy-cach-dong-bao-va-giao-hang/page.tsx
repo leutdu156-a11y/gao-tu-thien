@@ -8,6 +8,7 @@ import {
   FAQSection,
   OrderSteps,
   PageHeader,
+  RealPhotos,
   Section,
 } from '@/components/content';
 import { PackagingSection } from '@/components/PackagingSection';
@@ -187,6 +188,9 @@ export default function QuyCachDongBaoPage() {
 
       {/* Danh sách 16 mẫu bao bì thực tế */}
       <PackagingSection />
+
+      {/* Hình ảnh thực tế tại kho & giao hàng */}
+      <RealPhotos />
 
       {/* Quy trình đặt hàng */}
       <Section title="Quy Trình Đặt Đóng Bao & Giao Hàng">
