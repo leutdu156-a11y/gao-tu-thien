@@ -19,16 +19,16 @@ import {
 const CANONICAL = `${SITE_URL}/gao-phat-qua-tu-thien/`;
 
 export const metadata: Metadata = {
-  title: 'Gạo Phát Quà Từ Thiện – Gạo Dẻo Mềm Đóng Bao 5kg, 10kg',
+  title: 'Gạo Phát Quà Từ Thiện – Bao Gạo 5kg, 10kg',
   description:
-    'Cẩm nang chọn gạo phát quà từ thiện cho hộ nghèo, người già, trẻ nhỏ: Gạo dẻo vừa, dễ ăn, đóng túi 5kg-10kg. Bảng dự toán chi phí 100-1.000 suất quà chi tiết.',
+    'Gạo phát quà từ thiện dẻo mềm cho hộ nghèo, người già: đóng bao gạo 5kg, 10kg miễn phí tại TP.HCM. Bảng dự toán giá theo túi 5kg và 100–1.000 suất.',
   alternates: {
     canonical: CANONICAL,
   },
   openGraph: {
-    title: 'Gạo Phát Quà Từ Thiện – Gạo Dẻo Mềm Đóng Bao 5kg, 10kg | Vựa Gạo Sóc Trăng',
+    title: 'Gạo Phát Quà Từ Thiện – Bao Gạo 5kg, 10kg | Vựa Gạo Sóc Trăng',
     description:
-      'Cẩm nang chọn gạo phát quà từ thiện cho hộ nghèo, người già, trẻ nhỏ: Gạo dẻo vừa, dễ ăn, đóng túi 5kg-10kg. Bảng dự toán chi phí 100-1.000 suất quà chi tiết.',
+      'Gạo phát quà từ thiện dẻo mềm cho hộ nghèo, người già: đóng bao gạo 5kg, 10kg miễn phí tại TP.HCM. Bảng dự toán giá theo túi 5kg và 100–1.000 suất.',
     url: CANONICAL,
     type: 'article',
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gạo Phát Quà Từ Thiện – Gạo Dẻo Mềm Đóng Bao 5kg, 10kg | Vựa Gạo Sóc Trăng',
+    title: 'Gạo Phát Quà Từ Thiện – Bao Gạo 5kg, 10kg | Vựa Gạo Sóc Trăng',
     description:
-      'Cẩm nang chọn gạo phát quà từ thiện cho hộ nghèo, người già, trẻ nhỏ: Gạo dẻo vừa, dễ ăn, đóng túi 5kg-10kg. Bảng dự toán chi phí 100-1.000 suất quà chi tiết.',
+      'Gạo phát quà từ thiện dẻo mềm cho hộ nghèo, người già: đóng bao gạo 5kg, 10kg miễn phí tại TP.HCM. Bảng dự toán giá theo túi 5kg và 100–1.000 suất.',
     images: [`${SITE_URL}/og-gao-tu-thien.jpg`],
   },
 };
@@ -52,6 +52,10 @@ export const metadata: Metadata = {
 const giftProducts = getProducts(['gao-nghia-tinh', 'gao-thien-lanh', 'gao-thanh-y', 'gao-st25-thuong-hang']);
 
 const faqs = [
+  {
+    q: 'Mua gạo từ thiện 5kg, 10kg giá bao nhiêu một bao?',
+    a: 'Tính theo giá sỉ mốc 500kg – 1 tấn, Gạo Nghĩa Tình (dẻo vừa phát quà) khoảng 71.000 đ – 73.500 đ/bao 5kg và 142.000 đ – 147.000 đ/bao 10kg; Gạo Sẻ Chia (nở xốp) khoảng 67.500 đ – 70.000 đ/bao 5kg và 135.000 đ – 140.000 đ/bao 10kg. Toàn bộ bao bì in chữ Gạo Từ Thiện và công đóng túi được miễn phí 100%.',
+  },
   {
     q: 'Tại sao đi phát quà từ thiện cho hộ gia đình nên chọn gạo dẻo mềm thay vì gạo nở xốp?',
     a: 'Khi phát quà tận tay hộ nghèo, người già neo đơn và trẻ em, khẩu vị gia đình Việt Nam chuộng cơm dẻo vừa, hạt mềm ngọt và thơm nhẹ. Đặc biệt nhiều hộ khó khăn nấu một lần ăn cả ngày; dòng gạo dẻo thơm chất lượng cao giữ được độ mềm ẩm tự nhiên ngay cả khi cơm đã nguội, không bị khô cứng hay nghẹn cổ như gạo nở xốp chuyên dùng cho quán cơm.',
@@ -128,25 +132,28 @@ export default function GaoPhatQuaPage() {
 
         {/* 3 dòng gạo phát quà được ưa chuộng nhất */}
         <div className="bg-emerald-50/60 border border-emerald-200/80 rounded-2xl p-6">
-          <h3 className="text-base font-bold text-emerald-950 mb-4">Top 3 Loại Gạo Phát Quà Được Tin Chọn Nhiều Nhất:</h3>
+          <h3 className="text-base font-bold text-emerald-950 mb-4">Top 3 Loại Gạo Phát Quà Được Tin Chọn Nhiều Nhất (Gạo Từ Thiện 5kg &amp; 10kg):</h3>
           <div className="grid md:grid-cols-3 gap-5 text-sm">
             <div className="bg-white p-4 rounded-xl border border-emerald-100">
               <span className="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-900 text-xs font-bold rounded mb-1">Dễ ăn & ấm lòng</span>
               <h4 className="font-bold text-gray-900 text-base mb-1">Gạo Nghĩa Tình</h4>
               <p className="text-gray-600 text-xs mb-2">Đặc tính: Giống Liên Hương mới, dẻo vừa, ngọt bùi, để nguội vẫn mềm cơm.</p>
               <p className="text-emerald-800 font-bold">Giá sỉ: Từ 14.200đ – 15.200đ/kg</p>
+              <p className="text-xs text-gray-600 mt-1">Từ 71.000 đ/bao 5kg · 142.000 đ/bao 10kg (mốc 1 tấn)</p>
             </div>
             <div className="bg-white p-4 rounded-xl border border-emerald-100">
               <span className="inline-block px-2 py-0.5 bg-sky-100 text-sky-900 text-xs font-bold rounded mb-1">Thơm lài tự nhiên</span>
               <h4 className="font-bold text-gray-900 text-base mb-1">Gạo Thiện Lành</h4>
               <p className="text-gray-600 text-xs mb-2">Đặc tính: Thơm Lài 3A chính gốc, dẻo nhiều, thơm dịu, thích hợp cúng dường & phát quà.</p>
               <p className="text-emerald-800 font-bold">Giá sỉ: Từ 15.000đ – 16.200đ/kg</p>
+              <p className="text-xs text-gray-600 mt-1">Từ 75.000 đ/bao 5kg · 150.000 đ/bao 10kg (mốc 1 tấn)</p>
             </div>
             <div className="bg-white p-4 rounded-xl border border-emerald-100">
               <span className="inline-block px-2 py-0.5 bg-rose-100 text-rose-900 text-xs font-bold rounded mb-1">Quà biếu trang trọng</span>
               <h4 className="font-bold text-gray-900 text-base mb-1">Gạo Thành Ý</h4>
               <p className="text-gray-600 text-xs mb-2">Đặc tính: Hạt Ngọc Thái / Đài Thơm hạt dài, dẻo dai đậm đà, mùi thơm ngát.</p>
               <p className="text-emerald-800 font-bold">Giá sỉ: Từ 16.000đ – 17.200đ/kg</p>
+              <p className="text-xs text-gray-600 mt-1">Từ 80.000 đ/bao 5kg · 160.000 đ/bao 10kg (mốc 1 tấn)</p>
             </div>
           </div>
         </div>
@@ -164,7 +171,7 @@ export default function GaoPhatQuaPage() {
       </Section>
 
       {/* Bảng dự toán quy mô phần quà */}
-      <Section title="Bảng Dự Toán Chi Phí Theo Quy Mô Suất Quà (5kg & 10kg)">
+      <Section title="Bảng Dự Toán Giá Bao Gạo 5kg, 10kg Theo Quy Mô Suất Quà">
         <p className="text-sm text-gray-600 mb-4">
           Bảng tính nhanh ngân sách tham khảo để Ban tổ chức, Công đoàn và Mạnh thường quân dễ dàng lập kế hoạch tài chính:
         </p>
@@ -189,7 +196,7 @@ export default function GaoPhatQuaPage() {
                 <td className="p-3 font-bold text-gray-900">200 suất quà</td>
                 <td className="p-3 text-center font-semibold text-emerald-800">1.000 kg (1 tấn)</td>
                 <td className="p-3 text-center font-semibold text-gray-800">2.000 kg (2 tấn)</td>
-                <td className="p-3 text-right font-bold text-amber-800">~ 14.700.000 đ</td>
+                <td className="p-3 text-right font-bold text-amber-800">~ 14.200.000 đ</td>
               </tr>
               <tr className="hover:bg-gray-50/50">
                 <td className="p-3 font-bold text-gray-900">500 suất quà</td>

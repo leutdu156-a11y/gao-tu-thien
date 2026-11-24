@@ -19,16 +19,16 @@ import {
 const CANONICAL = `${SITE_URL}/gao-cung-duong-chua/`;
 
 export const metadata: Metadata = {
-  title: 'Gạo Cúng Dường Chùa & Tự Viện – Gạo Thơm Thuần Khiết',
+  title: 'Gạo Cúng Dường Chùa – Mua Gạo Cúng Chùa Sạch',
   description:
-    'Gạo ST25, Jasmine cúng dường Tam Bảo, trai tăng, lễ Vu Lan, Phật Đản. Hạt gạo thơm dẻo thanh khiết, hỗ trợ kiều bào gửi gạo cúng dường giao tận cửa chùa.',
+    'Mua gạo cúng dường chùa (ST25, Thơm Lài) sạch thuần khiết, đóng bao 5kg–25kg trang nghiêm, giao xe tải tận cửa chùa TP.HCM & miền Nam, bình ổn giá.',
   alternates: {
     canonical: CANONICAL,
   },
   openGraph: {
-    title: 'Gạo Cúng Dường Chùa & Tự Viện – Gạo Thơm Thuần Khiết | Vựa Gạo Sóc Trăng',
+    title: 'Gạo Cúng Dường Chùa – Mua Gạo Cúng Chùa Sạch | Vựa Gạo Sóc Trăng',
     description:
-      'Gạo ST25, Jasmine cúng dường Tam Bảo, trai tăng, lễ Vu Lan, Phật Đản. Hạt gạo thơm dẻo thanh khiết, hỗ trợ kiều bào gửi gạo cúng dường giao tận cửa chùa.',
+      'Mua gạo cúng dường chùa (ST25, Thơm Lài) sạch thuần khiết, đóng bao 5kg–25kg trang nghiêm, giao xe tải tận cửa chùa TP.HCM & miền Nam, bình ổn giá.',
     url: CANONICAL,
     type: 'article',
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gạo Cúng Dường Chùa & Tự Viện – Gạo Thơm Thuần Khiết | Vựa Gạo Sóc Trăng',
+    title: 'Gạo Cúng Dường Chùa – Mua Gạo Cúng Chùa Sạch | Vựa Gạo Sóc Trăng',
     description:
-      'Gạo ST25, Jasmine cúng dường Tam Bảo, trai tăng, lễ Vu Lan, Phật Đản. Hạt gạo thơm dẻo thanh khiết, hỗ trợ kiều bào gửi gạo cúng dường giao tận cửa chùa.',
+      'Mua gạo cúng dường chùa (ST25, Thơm Lài) sạch thuần khiết, đóng bao 5kg–25kg trang nghiêm, giao xe tải tận cửa chùa TP.HCM & miền Nam, bình ổn giá.',
     images: [`${SITE_URL}/og-gao-tu-thien.jpg`],
   },
 };
@@ -52,6 +52,10 @@ export const metadata: Metadata = {
 const templeProducts = getProducts(['gao-st25-thuong-hang', 'gao-thanh-y', 'gao-thien-lanh']);
 
 const faqs = [
+  {
+    q: 'Công đức cúng dường gạo cho chùa có ý nghĩa gì và nên đóng bao mấy ký?',
+    a: 'Trong Phật giáo, cúng dường gạo (bố thí lương thực) giúp nuôi dưỡng chư Tăng Ni tu học và trợ duyên bếp cơm chay 0 đồng tại chùa; công đức trọn vẹn cốt ở tâm thành kính và hạt gạo sạch lành. Khi mua gạo cúng chùa, nếu dâng lễ trên chánh điện nên chọn túi 5kg hoặc 10kg sạch đẹp, gọn gàng; nếu cúng dường nhập kho bếp ăn chùa số lượng lớn nên chọn bao 25kg để nhà chùa dễ bảo quản.',
+  },
   {
     q: 'Cúng dường gạo cho chùa, tịnh xá nên chọn loại gạo nào là trang nghiêm nhất?',
     a: 'Khi dâng cúng Tam Bảo và nuôi dưỡng Tăng đoàn tu học, hạt gạo tượng trưng cho hạt ngọc thực thuần khiết. Quý Phật tử và đạo tràng thường ưu tiên chọn dòng gạo phẩm chất cao nhất: ST25 Thượng Hạng (hạt dài trong bóng, thơm mùi lá dứa tự nhiên, để nguội vẫn dẻo mềm) hoặc Gạo Thiện Lành (Thơm Lài 3A) thanh tao thuần khiết. Hạt gạo trắng sạch, không pha trộn thể hiện trọn vẹn lòng thành kính.',
@@ -80,13 +84,14 @@ export default function GaoCungDuongPage() {
         intro={
           <>
             <p>
-              Cúng dường lương thực cho chư Tăng Ni, bổn tự, tịnh xá và các bếp ăn thiện nguyện trong chùa vào mùa Vu Lan Báo Hiếu,
-              Đại lễ Phật Đản, mùa An Cư Kiết Hạ hay lễ trai tăng cầu an cầu siêu là truyền thống thanh tịnh tích tụ phước báu vô lượng.
+              Cúng dường gạo cho chùa, chư Tăng Ni, bổn tự, tịnh xá và các bếp ăn thiện nguyện trong chùa vào mùa Vu Lan
+              Báo Hiếu, Đại lễ Phật Đản, mùa An Cư Kiết Hạ hay lễ trai tăng cầu an cầu siêu là truyền thống thanh tịnh
+              tích tụ công đức và phước báu vô lượng.
             </p>
             <p>
-              <strong>Vựa Gạo Sóc Trăng</strong> trân trọng đồng hành cùng Quý Phật tử, đạo tràng và quý thiện nam tín nữ:
-              cung cấp các dòng gạo thơm thượng hạng từ đồng bằng sông Cửu Long, hạt gạo mới xát trắng sạch thuần khiết,
-              đóng bao trang nghiêm và xe tải giao kính cẩn tận nơi.
+              Khi cần <strong>mua gạo cúng chùa</strong> trang nghiêm giá sỉ, <strong>Vựa Gạo Sóc Trăng</strong> trân
+              trọng đồng hành cùng Quý Phật tử và đạo tràng: cung cấp các dòng gạo thơm thượng hạng từ đồng bằng sông
+              Cửu Long, hạt gạo mới xát trắng sạch thuần khiết, đóng bao 5kg–25kg và xe tải giao kính cẩn tận cửa chùa.
             </p>
           </>
         }
@@ -142,6 +147,22 @@ export default function GaoCungDuongPage() {
               <p className="text-gray-600 text-xs">Tuần thất, lễ cúng giỗ, ngày Rằm lớn và ngày đầu tháng gieo duyên thanh tịnh.</p>
             </div>
           </div>
+        </div>
+
+        {/* Ý nghĩa & công đức cúng dường gạo */}
+        <div className="mt-6 bg-white border border-amber-200 rounded-2xl p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <h3 className="text-base font-bold text-amber-950">Ý Nghĩa &amp; Công Đức Cúng Dường Gạo Cho Chùa</h3>
+          <p>
+            Theo truyền thống Phật giáo, cúng dường gạo (bố thí lương thực) không chỉ góp phần nuôi dưỡng chư Tăng Ni
+            tinh tấn tu học mà còn tiếp sức cho các bếp cơm chay 0 đồng tại tự viện. Công đức trọn vẹn cốt ở{' '}
+            <strong>tâm thành kính và hạt gạo sạch lành</strong>, không phân biệt số lượng nhiều hay ít.
+          </p>
+          <p>
+            Khi <strong>mua gạo cúng chùa</strong>, nếu dâng lễ trực tiếp lên chánh điện hoặc làm lễ cầu an nên chọn{' '}
+            <strong>túi 5kg – 10kg</strong> đóng gói sạch đẹp, gọn gàng; nếu cúng dường nhập kho lương thực hoặc bếp ăn
+            của chùa số lượng lớn nên chọn <strong>bao 25kg</strong> để nhà chùa dễ bảo quản. Dịp lễ lớn, Quý Phật tử
+            cũng có thể hỏi trước Ban quản tự xem chùa có cần kết hợp thêm gạo nếp hoặc gạo lứt hay không.
+          </p>
         </div>
       </Section>
 

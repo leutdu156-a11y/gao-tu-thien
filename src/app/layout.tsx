@@ -21,18 +21,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Gạo Từ Thiện Giá Sỉ Tận Gốc | Vựa Gạo Sóc Trăng",
+    default: "Gạo Từ Thiện Giá Sỉ TP.HCM | Vựa Gạo Sóc Trăng",
     template: "%s | Vựa Gạo Sóc Trăng",
   },
   description:
-    "Vựa Gạo Sóc Trăng cung cấp gạo từ thiện giá sỉ tận gốc cho chùa, bếp ăn, đoàn thiện nguyện. Đóng bao 5kg-10kg miễn phí, giao tận nơi, hóa đơn VAT 5%.",
+    "Vựa Gạo Sóc Trăng cung cấp gạo từ thiện giá sỉ TP.HCM & miền Nam cho chùa, bếp ăn, đoàn thiện nguyện. Đóng bao 5kg–10kg miễn phí, giao tận nơi, VAT 5%.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "Gạo Từ Thiện Giá Sỉ Tận Gốc | Vựa Gạo Sóc Trăng",
+    title: "Gạo Từ Thiện Giá Sỉ TP.HCM | Vựa Gạo Sóc Trăng",
     description:
-      "Vựa Gạo Sóc Trăng cung cấp gạo từ thiện giá sỉ tận gốc cho chùa, bếp ăn, đoàn thiện nguyện. Đóng bao 5kg-10kg miễn phí, giao tận nơi, hóa đơn VAT 5%.",
+      "Vựa Gạo Sóc Trăng cung cấp gạo từ thiện giá sỉ TP.HCM & miền Nam cho chùa, bếp ăn, đoàn thiện nguyện. Đóng bao 5kg–10kg miễn phí, giao tận nơi, VAT 5%.",
     url: `${SITE_URL}/`,
     type: "website",
     locale: "vi_VN",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gạo Từ Thiện Giá Sỉ Tận Gốc | Vựa Gạo Sóc Trăng",
+    title: "Gạo Từ Thiện Giá Sỉ TP.HCM | Vựa Gạo Sóc Trăng",
     description:
-      "Vựa Gạo Sóc Trăng cung cấp gạo từ thiện giá sỉ tận gốc cho chùa, bếp ăn, đoàn thiện nguyện. Đóng bao 5kg-10kg miễn phí, giao tận nơi, hóa đơn VAT 5%.",
+      "Vựa Gạo Sóc Trăng cung cấp gạo từ thiện giá sỉ TP.HCM & miền Nam cho chùa, bếp ăn, đoàn thiện nguyện. Đóng bao 5kg–10kg miễn phí, giao tận nơi, VAT 5%.",
     images: [`${SITE_URL}/og-gao-tu-thien.jpg`],
   },
   robots: {

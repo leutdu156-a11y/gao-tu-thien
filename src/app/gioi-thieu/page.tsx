@@ -10,7 +10,7 @@ const CANONICAL = `${SITE_URL}/gioi-thieu/`;
 export const metadata: Metadata = {
   title: 'Giới Thiệu Kho Gạo Từ Thiện Giá Sỉ Tận Gốc',
   description:
-    'Giới thiệu hệ thống Vựa Gạo Sóc Trăng: Nhà máy xay xát tại Đồng Tháp và 4 kho phân phối tại TP.HCM, Bình Dương, Tây Ninh chuyên cung cấp gạo từ thiện giá sỉ tận gốc.',
+    'Vựa Gạo Sóc Trăng: Nhà máy xay xát Đồng Tháp và 4 kho tại TP.HCM, Bình Dương, Tây Ninh chuyên cung cấp gạo từ thiện giá sỉ tận gốc, đóng bao miễn phí.',
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: 'Giới Thiệu Kho Gạo Từ Thiện Giá Sỉ Tận Gốc',

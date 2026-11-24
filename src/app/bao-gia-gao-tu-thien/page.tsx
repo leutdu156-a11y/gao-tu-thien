@@ -3,13 +3,11 @@ import React from 'react';
 import Link from 'next/link';
 import { RICE_PRODUCTS } from '@/data/mockData';
 import {
-  CONTACT_LABEL,
-  DELIVERY,
-  DELIVERY_AREAS,
-  ORDER_STEPS,
-  PHONE_DISPLAY,
   PRICE_UPDATED,
   SITE_URL,
+  getProducts,
+  priceFor,
+  vnd,
 } from '@/data/site';
 import {
   CTABox,
@@ -26,16 +24,16 @@ import { GoogleReviews } from '@/components/GoogleReviews';
 const CANONICAL = `${SITE_URL}/bao-gia-gao-tu-thien/`;
 
 export const metadata: Metadata = {
-  title: 'Báo Giá Gạo Từ Thiện Giá Sỉ Tận Gốc',
+  title: 'Báo Giá Gạo Từ Thiện TP.HCM (500kg, 1 Tấn)',
   description:
-    'Bảng báo giá gạo từ thiện giá sỉ tận gốc hôm nay: Gạo Sẻ Chia, Nghĩa Tình, ST25. Đóng bao 5kg-10kg miễn phí, giao xe tải tận nơi, xuất hóa đơn VAT 5%.',
+    'Bảng giá gạo từ thiện TP.HCM hôm nay theo mốc 100kg, 500kg, 1 tấn (Sẻ Chia, Nghĩa Tình, ST25). Đóng bao 5kg–10kg miễn phí, giao tận nơi, VAT 5%.',
   alternates: {
     canonical: CANONICAL,
   },
   openGraph: {
-    title: 'Báo Giá Gạo Từ Thiện Giá Sỉ Tận Gốc | Vựa Gạo Sóc Trăng',
+    title: 'Báo Giá Gạo Từ Thiện TP.HCM (500kg, 1 Tấn) | Vựa Gạo Sóc Trăng',
     description:
-      'Bảng báo giá gạo từ thiện giá sỉ tận gốc hôm nay: Gạo Sẻ Chia, Nghĩa Tình, ST25. Đóng bao 5kg-10kg miễn phí, giao xe tải tận nơi, xuất hóa đơn VAT 5%.',
+      'Bảng giá gạo từ thiện TP.HCM hôm nay theo mốc 100kg, 500kg, 1 tấn (Sẻ Chia, Nghĩa Tình, ST25). Đóng bao 5kg–10kg miễn phí, giao tận nơi, VAT 5%.',
     url: CANONICAL,
     type: 'article',
     images: [
@@ -49,14 +47,34 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Báo Giá Gạo Từ Thiện Giá Sỉ Tận Gốc | Vựa Gạo Sóc Trăng',
+    title: 'Báo Giá Gạo Từ Thiện TP.HCM (500kg, 1 Tấn) | Vựa Gạo Sóc Trăng',
     description:
-      'Bảng báo giá gạo từ thiện giá sỉ tận gốc hôm nay: Gạo Sẻ Chia, Nghĩa Tình, ST25. Đóng bao 5kg-10kg miễn phí, giao xe tải tận nơi, xuất hóa đơn VAT 5%.',
+      'Bảng giá gạo từ thiện TP.HCM hôm nay theo mốc 100kg, 500kg, 1 tấn (Sẻ Chia, Nghĩa Tình, ST25). Đóng bao 5kg–10kg miễn phí, giao tận nơi, VAT 5%.',
     images: [`${SITE_URL}/og-gao-tu-thien.jpg`],
   },
 };
 
+const bulkEstimateProducts = getProducts([
+  'gao-se-chia',
+  'gao-nghia-tinh',
+  'gao-thien-lanh',
+  'gao-st25-thuong-hang',
+]);
+const BULK_WEIGHTS = [100, 300, 500, 1000] as const;
+
 const faqs = [
+  {
+    q: '500kg gạo từ thiện bao nhiêu tiền?',
+    a: 'Ở mốc 500kg (nửa tấn — tương đương 100 bao 5kg hoặc 50 bao 10kg), tổng chi phí khoảng 7.000.000 đ với Gạo Sẻ Chia (IR504 nở xốp, 14.000 đ/kg), 7.350.000 đ với Gạo Nghĩa Tình (dẻo vừa phát quà, 14.700 đ/kg), 7.850.000 đ với Gạo Thiện Lành (Thơm Lài 3A, 15.700 đ/kg) và 11.900.000 đ với Gạo ST25 Thượng Hạng (23.800 đ/kg). Đơn giá đã bao gồm miễn phí bao bì và công đóng túi 5kg, 10kg.',
+  },
+  {
+    q: '1 tấn gạo bao nhiêu tiền? Giá 1 tấn gạo ST25 là bao nhiêu?',
+    a: 'Ở mốc 1.000kg (1 tấn — tương đương 200 bao 5kg hoặc 100 bao 10kg), giá sỉ tại kho từ 13.500.000 đ/tấn đối với Gạo Sẻ Chia (13.500 đ/kg), 14.200.000 đ/tấn đối với Gạo Nghĩa Tình (14.200 đ/kg), 15.000.000 đ/tấn đối với Gạo Thiện Lành (15.000 đ/kg) và 23.000.000 đ/tấn đối với Gạo ST25 Thượng Hạng (23.000 đ/kg). Đơn từ 5 tấn trở lên cho chương trình cứu trợ được áp dụng giá xuất xưởng trực tiếp từ nhà máy Đồng Tháp.',
+  },
+  {
+    q: '100kg gạo từ thiện bao nhiêu tiền và có hỗ trợ đóng túi 5kg không?',
+    a: 'Với mốc 100kg (tương đương 20 túi 5kg hoặc 10 bao 10kg), chi phí khoảng 1.500.000 đ (Gạo Sẻ Chia) đến 1.580.000 đ (Gạo Nghĩa Tình) hoặc 2.520.000 đ (ST25 Thượng Hạng). Kho vẫn hỗ trợ đóng sẵn bao 5kg, 10kg miễn phí cho các nhóm thiện nguyện nhỏ hoặc mua thử mẫu tại kho TP.HCM & Bình Dương.',
+  },
   {
     q: 'Bảng giá gạo từ thiện áp dụng cho đơn hàng số lượng bao nhiêu?',
     a: 'Chúng tôi áp dụng bảng giá sỉ theo từng nấc khối lượng: dưới 300kg (cho đơn nhỏ / thử mẫu), từ 300kg - 499kg, từ 500kg - 999kg và từ 1.000kg (1 tấn) trở lên. Với các chương trình cứu trợ quy mô lớn từ 5 tấn trở lên, kho áp dụng chính sách giá xuất xưởng trực tiếp từ nhà máy Đồng Tháp.',
@@ -85,13 +103,13 @@ export default function BaoGiaPage() {
         intro={
           <>
             <p>
-              Bảng báo giá gạo từ thiện sỉ tận gốc cập nhật ngày {PRICE_UPDATED} của <strong>Vựa Gạo Sóc Trăng</strong>.
-              Đơn giá được tối ưu riêng cho các chương trình phát quà hộ nghèo, cúng dường tự viện, bếp cơm tình thương
-              và cứu trợ bão lũ.
+              Bảng báo giá gạo từ thiện giá rẻ TP.HCM sỉ tận gốc cập nhật ngày {PRICE_UPDATED} của{' '}
+              <strong>Vựa Gạo Sóc Trăng</strong>. Đơn giá và giá gạo cứu trợ được tối ưu riêng cho các chương trình
+              phát quà hộ nghèo, cúng dường tự viện, bếp cơm tình thương và cứu trợ bão lũ.
             </p>
             <p>
-              Hỗ trợ đóng bao 5kg, 10kg miễn phí, giao hàng bằng xe tải chuyên dụng đến tận chùa, mái ấm, bếp ăn
-              và xuất hóa đơn điện tử VAT 5% đầy đủ.
+              Hỗ trợ đóng bao 5kg, 10kg miễn phí, xe tải giao nhanh nội thành TP.HCM, Bình Dương, Tây Ninh, Miền Tây
+              đến tận chùa, mái ấm, bếp ăn và xuất hóa đơn điện tử VAT 5% đầy đủ.
             </p>
           </>
         }
@@ -122,6 +140,50 @@ export default function BaoGiaPage() {
             </Link>
           </div>
         </div>
+      </Section>
+
+      {/* Bảng quy đổi tổng tiền theo mốc 100kg, 300kg, 500kg, 1 tấn */}
+      <Section id="du-toan-khoi-luong" title="100kg, 500kg, 1 Tấn Gạo Từ Thiện Bao Nhiêu Tiền?" muted>
+        <p className="text-sm text-gray-600 mb-4">
+          Bảng quy đổi tổng chi phí theo từng mốc khối lượng giúp đoàn thiện nguyện, công đoàn và chương trình cứu trợ
+          nhẩm nhanh ngân sách trước khi chốt đơn:
+        </p>
+        <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <table className="w-full text-sm">
+            <thead className="bg-amber-50 text-amber-950 font-bold border-b border-amber-200">
+              <tr>
+                <th className="p-3 text-left">Loại gạo</th>
+                <th className="p-3 text-right">100kg (20 bao 5kg)</th>
+                <th className="p-3 text-right">300kg (60 bao 5kg)</th>
+                <th className="p-3 text-right">500kg / Nửa tấn (100 bao 5kg)</th>
+                <th className="p-3 text-right">1.000kg / 1 Tấn (200 bao 5kg)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100 text-gray-700">
+              {bulkEstimateProducts.map((p) => (
+                <tr key={p.id} className="hover:bg-gray-50/60">
+                  <td className="p-3 font-bold text-gray-900">
+                    <div>{p.name}</div>
+                    <div className="text-xs font-normal text-gray-500">{p.category}</div>
+                  </td>
+                  {BULK_WEIGHTS.map((kg) => {
+                    const unit = priceFor(p, kg);
+                    return (
+                      <td key={kg} className="p-3 text-right whitespace-nowrap">
+                        <div className="font-bold text-emerald-800">{vnd(unit * kg)}</div>
+                        <div className="text-xs text-gray-500">({vnd(unit)}/kg)</div>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-500 mt-3 italic">
+          * Tổng tiền trên đã bao gồm công đóng bao 5kg, 10kg miễn phí và hỗ trợ xuất hóa đơn điện tử VAT 5%. Chương trình
+          cứu trợ từ 5 tấn trở lên vui lòng liên hệ trực tiếp để áp dụng giá xuất xưởng nhà máy Đồng Tháp.
+        </p>
       </Section>
 
       {/* Form nhận báo giá nhanh */}

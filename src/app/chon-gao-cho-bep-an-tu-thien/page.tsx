@@ -104,7 +104,7 @@ export default function ChonGaoBepAnPage() {
             <span className="bg-emerald-100 text-emerald-900 text-xs font-bold px-3 py-1 rounded-full uppercase">
               Vua Lợi Cơm Cho Quán Cơm & Bếp Ăn
             </span>
-            <h3 className="text-2xl font-bold text-gray-900">Gạo Sẻ Chia (Nở Xốp Lợi Cơm)</h3>
+            <h3 className="text-2xl font-bold text-gray-900">Gạo Sẻ Chia (Gạo 504 Giá Sỉ Nở Xốp Lợi Cơm)</h3>
             <ul className="text-sm text-gray-600 space-y-2.5">
               <li><strong>Đặc tính:</strong> Chuẩn giống lúa IR504 tuyển chọn, hạt tròn to, cơm nở xốp nhiều, hạt khô ráo, không bết dính.</li>
               <li><strong>Ưu điểm kinh tế:</strong> Độ nở cực lớn, 1kg gạo cho ra 4 – 5 đĩa cơm đầy đặn. Tiết kiệm tối đa ngân sách nguyên liệu.</li>

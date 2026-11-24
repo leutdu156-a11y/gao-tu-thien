@@ -17,7 +17,7 @@ export const MESSENGER_URL = 'https://m.me/100063985415931';
 export const CONTACT_LABEL = `Hotline & Zalo báo giá: ${PHONE_DISPLAY}`;
 
 /** Ngày cập nhật bảng giá hiển thị trên site. TODO: sửa mỗi lần đổi giá trong mockData.ts */
-export const PRICE_UPDATED = '09/11/2026';
+export const PRICE_UPDATED = '24/11/2026';
 
 export const PAGES = [
   { path: '/', label: 'Trang chủ' },
@@ -115,6 +115,14 @@ export const mapsSearchUrl = (address: string) => {
 };
 
 export const HOME_FAQS = [
+  {
+    q: 'Mua gạo từ thiện ở đâu uy tín, giá sỉ tận gốc tại TP.HCM và các tỉnh lân cận?',
+    a: 'Quý đoàn có thể đặt hàng trực tiếp tại Vựa Gạo Sóc Trăng — hệ thống cung cấp gạo từ thiện từ nhà máy xay xát Đồng Tháp với trụ sở chính đón khách xem mẫu, thử cơm tại Lái Thiêu (Bình Dương, giáp ranh TP.HCM), 2 kho điều phối giao hỏa tốc tại TP. Thủ Đức và Quận 7 (TP.HCM), cùng kho Tây Ninh phục vụ các tỉnh miền Đông và miền Tây.',
+  },
+  {
+    q: '500kg hoặc 1 tấn gạo từ thiện giá bao nhiêu tiền?',
+    a: 'Ở mốc 500kg, giá từ 7.000.000 đ (Gạo Sẻ Chia IR504) đến 7.350.000 đ (Gạo Nghĩa Tình dẻo vừa); ở mốc 1 tấn (1.000kg), giá từ 13.500.000 đ (Gạo Sẻ Chia) đến 14.200.000 đ (Gạo Nghĩa Tình) và 23.000.000 đ (Gạo ST25 Thượng Hạng). Đơn giá đã bao gồm miễn phí đóng bao 5kg – 10kg.',
+  },
   {
     q: 'Kho gạo có hỗ trợ đóng túi nhỏ 5kg, 10kg miễn phí không?',
     a: 'Hoàn toàn miễn phí 100%. Vựa Gạo Sóc Trăng có sẵn các loại bao bì 5kg, 10kg in sẵn chữ "Gạo Từ Thiện / Gạo Nghĩa Tình" trang trọng và sạch đẹp. Toàn bộ chi phí bao bì, nhân công chia bao và may miệng túi chắc chắn đều được kho tài trợ 0 đồng cho Quý đoàn.',
